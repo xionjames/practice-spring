@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService {
     private HashMap<Integer, Customer> customers = new HashMap<>();
 
     @Override
-    public List<Customer> listAllCustomers() {
+    public List<Customer> getAllCustomers() {
         Customer customer = new Customer();
         customer.setId(1);
         customer.setFirstName("John");
@@ -47,6 +47,11 @@ public class CustomerServiceImpl implements CustomerService {
                    .stream()
                    .map(entry -> entry.getValue())
                    .collect(Collectors.toList());
+    }
+
+    @Override
+    public Customer getCustomerById(Integer id) {
+        return this.customers.get(id);
     }
     
 }
