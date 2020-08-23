@@ -30,10 +30,10 @@
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Address</th>
+                        <!--th>Address</th-->
                         <th>City</th>
                         <th>State</th>
-                        <th>Zip Code</th>
+                        <!--th>Zip Code</th-->
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -44,17 +44,23 @@
                         <td th:text="${customer.lastName}"></td>
                         <td th:text="${customer.email}"></td>
                         <td th:text="${customer.phoneNumber}"></td>
-                        <td th:text="${customer.addressLine1 + '. ' + customer.addressLine2}"></td>
+                        <!--td th:text="${customer.addressLine1 + '. ' + customer.addressLine2}"></td-->
                         <td th:text="${customer.city}"></td>
                         <td th:text="${customer.state}"></td>
-                        <td th:text="${customer.zipCode}"></td>
+                        <!--td th:text="${customer.zipCode}"></td-->
                         <td>
                             <a th:href="${'/customer/' + customer.id}">View</a>
+                            |
+                            <a th:href="${'/customer/edit/' + customer.id}">Edit</a>
+                            |
+                            <a th:href="${'/customer/delete/' + customer.id}">Delete</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <hr />
+        <a th:href="${'/customer/create'}">Create new</a>
     </div>
 </body>
 </html>

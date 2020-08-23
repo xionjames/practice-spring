@@ -1,0 +1,100 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="xionjames">
+
+    <title>Spring MVC CRUD Demo</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.5.2/css/bootstrap.min.css"
+        th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+    <script src="http:/cdn.jsdelivr.net/webjars/jquery/3.5.1/jquery.min.js"
+        th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Form</h1>
+        <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="POST">
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="row">
+                <div class="form-group col-sm-5 row">
+                    <label class="col-form-label col-sm-6">First Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 row offset-2">
+                    <label class="col-form-label col-sm-6">Last Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5 row">
+                    <label class="col-form-label col-sm-6">Email:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{email}" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 row offset-2">
+                    <label class="col-form-label col-sm-6">Phone Number:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{phoneNumber}" />
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5 row">
+                    <label class="col-form-label col-sm-6">Address Line 1:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{addressLine1}" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 row offset-2">
+                    <label class="col-form-label col-sm-6">Address Line 2:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{addressLine2}" />
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5 row">
+                    <label class="col-form-label col-sm-6">City:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{city}" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 row offset-2">
+                    <label class="col-form-label col-sm-6">State:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{state}" />
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5 row">
+                    <label class="col-form-label col-sm-6">Zip Code:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" th:field="*{zipCode}" />
+                    </div>
+                </div>    
+            </div>
+            <hr />
+            <div class="text-right">
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+        
+        <hr />
+        <a th:href="${'/customers'}">Go back</a>
+    </div>
+</body>
+
+</html>
